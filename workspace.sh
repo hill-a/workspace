@@ -15,7 +15,7 @@ fi
 # if work env not found in working directory: download it and extract it
 if [ ! -d "./workspace" ]; then
     echo "Workspace not found, downloading from git..."
-    curl -L https://github.com/hill-a/workspace/tarball/master | tar --wildcards --strip-components=1 -xzf temp.tar.gz */workspace
+    curl -L https://github.com/hill-a/workspace/tarball/master | tar --wildcards --strip-components=1 -xz */workspace
 fi
 
 # if docker not found: get the install docker script and run it
