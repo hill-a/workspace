@@ -1,10 +1,12 @@
 FROM ubuntu:xenial
 
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
+    apt-get install -y software-properties-common wget apt-transport-https ca-certificates && \
     add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
+    wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+    apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-6.0 main" && \
     apt-get update && \
-	apt-get install -y build-essential cmake git libboost-dev python3 python3-pip g++-7 libopenblas-dev liblapack-dev liblapacke-dev wget python3-tk && \
+	apt-get install -y sudo build-essential cmake ninja clang-6.0 git libboost-dev python3 python3-pip g++-7 libopenblas-dev liblapack-dev liblapacke-dev python3-tk && \
     python3 -m pip install --upgrade pip && \
     python3 -m pip install numpy pandas matplotlib seaborn
 
