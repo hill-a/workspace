@@ -17,7 +17,9 @@ sudo apt-get install curl
 
 One liner setup, and startup:
 ```bash
-curl -so workspace.sh https://raw.githubusercontent.com/hill-a/workspace/master/workspace.sh && chmod +x ./workspace.sh && ./workspace.sh
+curl -so workspace.sh https://raw.githubusercontent.com/hill-a/workspace/master/workspace.sh && \
+chmod +x ./workspace.sh && \
+./workspace.sh
 ```
 
 To re-open the atom editor, simply call:
